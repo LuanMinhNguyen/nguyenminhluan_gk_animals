@@ -133,7 +133,7 @@ class _ViewState extends State<View> {
     initState();
   }
 
-  void checkEasy(int num) {
+  void checkEasy(int num, String imgLink) {
     easy[num] = true;
     if (trigger == false) {
       trigger = true;
@@ -141,6 +141,33 @@ class _ViewState extends State<View> {
       vitri = num;
     } else {
       if (answer == positionEasy[num]) {
+        if (imgLink == 'images/001-dog.png') {
+          audioCache.play('audios/dog.mp3');
+        } else if (imgLink == 'images/002-bird.png') {
+          audioCache.play('audios/bird.mp3');
+        } else if (imgLink == 'images/003-cat.png') {
+          audioCache.play('audios/cat.mp3');
+        } else if (imgLink == 'images/004-bee.png') {
+          audioCache.play('audios/bee.mp3');
+        } else if (imgLink == 'images/005-fish.png') {
+          audioCache.play('audios/fish.mp3');
+        } else if (imgLink == 'images/006-chicken.png') {
+          audioCache.play('audios/chicken.mp3');
+        } else if (imgLink == 'images/009-camel.png') {
+          audioCache.play('audios/camel.mp3');
+        } else if (imgLink == 'images/011-cow.png') {
+          audioCache.play('audios/cow.mp3');
+        } else if (imgLink == 'images/012-halloween.png') {
+          audioCache.play('audios/halloween.mp3');
+        } else if (imgLink == 'images/013-duck.png') {
+          audioCache.play('audios/duck.mp3');
+        } else if (imgLink == 'images/014-snake.png') {
+          audioCache.play('audios/snake.mp3');
+        } else if (imgLink == 'images/015-turkey.png') {
+          audioCache.play('audios/turkey.mp3');
+        } else if (imgLink == 'images/016-frog.png') {
+          audioCache.play('audios/frog.mp3');
+        }
         timer?.isActive;
         timer = Timer.periodic(Duration(seconds: 1), (timer) {
           setState(() {
@@ -158,6 +185,7 @@ class _ViewState extends State<View> {
           });
         });
       } else {
+        audioCache.play('audios/baby-laugh.mp3');
         timer?.isActive;
         timer = Timer.periodic(Duration(seconds: 1), (timer) {
           setState(() {
@@ -326,7 +354,12 @@ class _ViewState extends State<View> {
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              checkEasy(i);
+                              checkEasy(
+                                  i,
+                                  ('images/' +
+                                          imgs[animalsEasy[positionEasy[i]]] +
+                                          '.png')
+                                      .toString());
                             });
                           },
                           child: easy[i]
@@ -366,7 +399,12 @@ class _ViewState extends State<View> {
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              checkEasy(i);
+                              checkEasy(
+                                  i,
+                                  ('images/' +
+                                          imgs[animalsEasy[positionEasy[i]]] +
+                                          '.png')
+                                      .toString());
                             });
                           },
                           child: easy[i]
@@ -406,7 +444,12 @@ class _ViewState extends State<View> {
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              checkEasy(i);
+                              checkEasy(
+                                  i,
+                                  ('images/' +
+                                          imgs[animalsEasy[positionEasy[i]]] +
+                                          '.png')
+                                      .toString());
                             });
                           },
                           child: easy[i]
@@ -446,7 +489,12 @@ class _ViewState extends State<View> {
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              checkEasy(i);
+                              checkEasy(
+                                  i,
+                                  ('images/' +
+                                          imgs[animalsEasy[positionEasy[i]]] +
+                                          '.png')
+                                      .toString());
                             });
                           },
                           child: easy[i]

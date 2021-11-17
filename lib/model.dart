@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:audioplayers/audioplayers.dart';
 
 Random random = Random();
 String gameLevel = "Easy";
@@ -71,3 +72,5 @@ var changeEasy = List.filled(8, 'images/018-back.png');
 var changeMedium = List.filled(12, 'images/018-back.png');
 var changeHard = List.filled(24, 'images/018-back.png');
 int score = 0;
+
+final AudioCache audioCache = AudioCache();
